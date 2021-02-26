@@ -1,0 +1,388 @@
+╭─charles at pclinux in ~/livrable1-eleves-6022019/standalone 21:25
+╰─○ ./standalone.static
+A jaune de jouer
+Entrer origine
+1
+
+Entrer destination
+3
+J: 23 (0 piles de 5) - R : 24 (0 piles de 5)
+A rouge de jouer
+Entrer origine
+1
+
+Entrer destination
+4
+jouerCoup impossible : la colonne 1 est vide ! 
+A rouge de jouer
+Entrer origine
+2
+
+Entrer destination
+5
+jouerCoup impossible : cases 2 et 5 inaccessibles! 
+A rouge de jouer
+Entrer origine
+2
+
+Entrer destination
+4
+jouerCoup impossible : cases 2 et 4 inaccessibles! 
+A rouge de jouer
+Entrer origine
+3
+
+Entrer destination
+5
+jouerCoup impossible : cases 3 et 5 inaccessibles! 
+A rouge de jouer
+Entrer origine
+2
+
+Entrer destination
+3
+J: 22 (0 piles de 5) - R : 24 (0 piles de 5)
+A jaune de jouer
+Entrer origine
+3
+
+Entrer destination
+5
+jouerCoup impossible : cases 3 et 5 inaccessibles! 
+A jaune de jouer
+Entrer origine
+4
+
+Entrer destination
+5
+J: 21 (0 piles de 5) - R : 24 (0 piles de 5)
+A rouge de jouer
+Entrer origine
+6
+
+Entrer destination
+5
+jouerCoup impossible : cases 6 et 5 inaccessibles! 
+A rouge de jouer
+Entrer origine
+2
+
+Entrer destination
+3
+jouerCoup impossible : la colonne 2 est vide ! 
+A rouge de jouer
+Entrer origine
+3
+
+Entrer destination
+1
+jouerCoup impossible : la colonne 1 est vide ! 
+A rouge de jouer
+Entrer origine
+8
+
+Entrer destination
+9
+J: 21 (0 piles de 5) - R : 23 (0 piles de 5)
+A jaune de jouer
+Entrer origine
+0
+
+Entrer destination
+3
+J: 21 (0 piles de 5) - R : 22 (0 piles de 5)
+A rouge de jouer
+Entrer origine
+3
+
+Entrer destination
+7
+J: 21 (0 piles de 5) - R : 21 (1 piles de 5)
+A jaune de jouer
+Entrer origine
+6
+
+Entrer destination
+12
+J: 21 (0 piles de 5) - R : 20 (1 piles de 5)
+A rouge de jouer
+Entrer origine
+13
+
+Entrer destination
+21
+J: 20 (0 piles de 5) - R : 20 (1 piles de 5)
+A jaune de jouer
+Entrer origine
+20
+
+Entrer destination
+28
+J: 19 (0 piles de 5) - R : 20 (1 piles de 5)
+A rouge de jouer
+Entrer origine
+29
+
+Entrer destination
+30
+J: 18 (0 piles de 5) - R : 20 (1 piles de 5)
+A jaune de jouer
+Entrer origine
+30
+
+Entrer destination
+36
+J: 18 (0 piles de 5) - R : 19 (1 piles de 5)
+A rouge de jouer
+Entrer origine
+23
+
+Entrer destination
+30
+jouerCoup impossible : la colonne 30 est vide ! 
+A rouge de jouer
+Entrer origine
+12
+
+Entrer destination
+21 
+J: 17 (0 piles de 5) - R : 19 (1 piles de 5)
+A jaune de jouer
+Entrer origine
+5
+
+Entrer destination
+9
+J: 16 (0 piles de 5) - R : 19 (1 piles de 5)
+A rouge de jouer
+Entrer origine
+7
+
+Entrer destination
+14
+jouerCoup impossible : trop de jetons entre 7 et 14 ! 
+A rouge de jouer
+Entrer origine
+14
+
+Entrer destination
+23
+J: 15 (0 piles de 5) - R : 19 (1 piles de 5)
+A jaune de jouer
+Entrer origine
+22
+
+Entrer destination
+23
+J: 15 (0 piles de 5) - R : 18 (1 piles de 5)
+A rouge de jouer
+Entrer origine
+9
+
+Entrer destination
+10
+J: 14 (0 piles de 5) - R : 18 (2 piles de 5)
+A jaune de jouer
+Entrer origine
+10
+
+Entrer destination
+11
+jouerCoup impossible : trop de jetons entre 10 et 11 ! 
+A jaune de jouer
+Entrer origine
+17
+
+Entrer destination
+16
+J: 14 (0 piles de 5) - R : 17 (2 piles de 5)
+A rouge de jouer
+Entrer origine
+11
+
+Entrer destination
+16
+J: 13 (0 piles de 5) - R : 17 (2 piles de 5)
+A jaune de jouer
+Entrer origine
+15
+
+Entrer destination
+16
+J: 13 (0 piles de 5) - R : 16 (2 piles de 5)
+A rouge de jouer
+Entrer origine
+24
+
+Entrer destination
+16
+J: 12 (1 piles de 5) - R : 16 (2 piles de 5)
+A jaune de jouer
+Entrer origine
+18
+
+Entrer destination
+19
+J: 11 (1 piles de 5) - R : 16 (2 piles de 5)
+A rouge de jouer
+Entrer origine
+19
+
+Entrer destination
+27
+J: 11 (1 piles de 5) - R : 15 (2 piles de 5)
+A jaune de jouer
+Entrer origine
+26
+
+Entrer destination
+27
+J: 11 (1 piles de 5) - R : 14 (2 piles de 5)
+A rouge de jouer
+Entrer origine
+25
+
+Entrer destination
+34
+J: 10 (1 piles de 5) - R : 14 (2 piles de 5)
+A jaune de jouer
+Entrer origine
+35
+
+Entrer destination
+41
+J: 9 (1 piles de 5) - R : 14 (2 piles de 5)
+A rouge de jouer
+Entrer origine
+41
+
+Entrer destination
+45
+J: 9 (1 piles de 5) - R : 13 (2 piles de 5)
+A jaune de jouer
+Entrer origine
+45
+
+Entrer destination
+44
+J: 8 (1 piles de 5) - R : 13 (2 piles de 5)
+A rouge de jouer
+Entrer origine
+44
+
+Entrer destination
+47
+J: 8 (1 piles de 5) - R : 12 (3 piles de 5)
+A jaune de jouer
+Entrer origine
+44
+
+Entrer destination
+46
+jouerCoup impossible : la colonne 44 est vide ! 
+A jaune de jouer
+Entrer origine
+44
+
+Entrer destination
+4
+jouerCoup impossible : la colonne 44 est vide ! 
+A jaune de jouer
+Entrer origine
+47
+
+Entrer destination
+46
+jouerCoup impossible : trop de jetons entre 47 et 46 ! 
+A jaune de jouer
+Entrer origine
+34
+
+Entrer destination
+41
+jouerCoup impossible : la colonne 41 est vide ! 
+A jaune de jouer
+Entrer origine
+34
+
+Entrer destination
+40
+J: 8 (1 piles de 5) - R : 11 (3 piles de 5)
+A rouge de jouer
+Entrer origine
+33
+
+Entrer destination
+39
+J: 7 (1 piles de 5) - R : 11 (3 piles de 5)
+A jaune de jouer
+Entrer origine
+38
+
+Entrer destination
+42
+J: 6 (1 piles de 5) - R : 11 (3 piles de 5)
+A rouge de jouer
+Entrer origine
+43
+
+Entrer destination
+42
+J: 6 (1 piles de 5) - R : 10 (3 piles de 5)
+A jaune de jouer
+Entrer origine
+37
+
+Entrer destination
+36
+J: 6 (1 piles de 5) - R : 9 (3 piles de 5)
+A rouge de jouer
+Entrer origine
+31
+
+Entrer destination
+23
+J: 6 (1 piles de 5) - R : 8 (3 piles de 5)
+A jaune de jouer
+Entrer origine
+39
+
+Entrer destination
+40
+J: 6 (1 piles de 5) - R : 7 (4 piles de 5)
+A rouge de jouer
+Entrer origine
+4
+
+Entrer destination
+42
+jouerCoup impossible : la colonne 4 est vide ! 
+A rouge de jouer
+Entrer origine
+4642
+
+Entrer destination
+46
+jouerCoup impossible : la colonne 34 est vide ! 
+A rouge de jouer
+Entrer origine
+4
+
+Entrer destination
+6
+jouerCoup impossible : la colonne 4 est vide ! 
+A rouge de jouer
+Entrer origine
+46
+
+Entrer destination
+42
+J: 6 (1 piles de 5) - R : 6 (4 piles de 5)
+A jaune de jouer
+Entrer origine
+32
+
+Entrer destination
+23
+J: 6 (2 piles de 5) - R : 5 (4 piles de 5)
+fin de la partie%    
