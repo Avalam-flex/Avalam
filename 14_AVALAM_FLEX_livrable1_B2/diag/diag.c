@@ -22,7 +22,7 @@ Description de l'algorithme :
 //MACRO CONSTANTES
 #define MAXCAR 200 //Taille fichier redirection
 #define MAXFEN 50 //Taille chaine type FEN
-
+#define MAXFIC 30
 //DEBUT main
 int main(int argc,char *fen[])
 {
@@ -35,14 +35,14 @@ int main(int argc,char *fen[])
     char carac;//chaine de caractère pour la description du plateau
     char fic[MAXCAR] = "../build/web/data/"; //adresse manque le nom du fichier
     char note[MAXCAR]="";//chaine de caractère pour le fichier redirectionné
-    char fichier[50] = "diag.js"; //fichier dans lequel sera affiché le plateau
+    char fichier[MAXFIC] = "diag.js"; //fichier dans lequel sera affiché le plateau
     T_Position plateau;
 //FIN DECLARATION
 
     //S'il n'y a pas 3 arguments 
     if(argc != 3) //error trop de champs
     {   
-        //On demmande à l'utilisateur de rsaisir à nouveau sa commande
+        //On demmande à l'utilisateur de saisir à nouveau sa commande
         printf("Votre commande est invalide, formats corrects : \n<<numéro diagramme>> <<fen>> \n<<numéro diagramme>> <<fen>> < FICHIER\n");
     }
     //Sinon, on lance le programme
@@ -53,7 +53,7 @@ int main(int argc,char *fen[])
     printf("Diagramme : %s\n",fen[1]);//Affiche le numéro du diagramme
     printf("Votre chaine : %s \n",fen[2]);//Affiche la chaine de l'utilisateur
     printf("Nom du fichier? (diag.js) par défaut dans ./web/data\n");//Affichage du fichier par défaut 
-    fgets(fichier,50,stdin);//On saisie le nom du fichier s'il y en a un 
+    fgets(fichier,50,stdin);//On saisit le nom du fichier s'il y en a un 
 
     if(fichier[0]!= '\n')//Si le fichier a été tapé
     {
@@ -82,7 +82,7 @@ int main(int argc,char *fen[])
         switch(etat)
         {
 
-            case 1 : //Si c'est le caractère est soit : u, d, t, q, c, U, D, T, Q, C  ( || = ou )
+            case 1 : //Si c'est le caractère est soit : u, d, t, q, c, U, D, T, Q, C
                 if (fen[2][i]=='u'|| fen[2][i]=='U' || fen[2][i]=='d' || fen[2][i]=='D' || fen[2][i]=='t' || fen[2][i]=='T' || fen[2][i]=='q' || fen[2][i]=='Q' || fen[2][i]=='c' || fen[2][i]=='C')//toutes les lettres connues utilisable
                     {
                         FEN2[j]=fen[2][i];//alors on l'écrit dans la chaine FEN
@@ -92,24 +92,23 @@ int main(int argc,char *fen[])
                     }
                 else if (fen[2][i]=='r' || fen[2][i]=='j') //si c'est un trait
                     {
-                        trait=fen[2][i]; //on stock le trait dans une chaine à part
+                        trait=fen[2][i]; //on stock le trait dans un char à part
                         i++;//on regarde la prochain caractère 
-                        etat=1;//on reppase au début du 1er filtre
+                        etat=1; //on repasse au début du 1er filtre
                     }
                 else {etat=2;} //else on check si c'est un nombre
                 break;
 
-            case 2 : // On verifie si c'est un chiffre (code ASCII Chiffre - code ASCII de 0)
+            case 2 :
             //Si c'est un chiffre alors son CODE ASCII - CODE ASCII DE 0 sera >= 0 et <10
                 if((fen[2][i]-48)>=0 && (fen[2][i]-48)<10) //verifie si chiffre code ASCII - code ASCII de 0
                 {
-                        FEN2[j]=fen[2][i];// on l'écrit dans la chaine FEN
+                        FEN2[j]=fen[2][i]; // on écrit dans la chaine FEN
                         i++;//on passe au prochain caractère
                         j++;//on se prépare à écrire le prochain caractère dans la chaine FEN
-                        etat=1;//on reppase dans le 1er filtre
+                        etat=1;//on repasse dans le 1er filtre
                 }
-                //Sinon, ce n'est pas un chiffre
-                else {etat=1; i++;}//alors on reppase au 1er filtre
+                else {etat=1; i++;}//alors on repasse au 1er filtre
                 break;
 
         }    
@@ -127,11 +126,10 @@ int main(int argc,char *fen[])
         printf("__DEBUG__");
         printf("Nouveau type FEN: <<%s>>\n",FEN2);//affichage de la chaine FEN formatée
     #endif
-    plateau = interpreteur(FEN2); //On appelle la fonction interpéteur 
-    Refresh_diag(fic,plateau,fen[2],fen[1],note);//On appelle la fonction Refresh_diag
-//C'est deux fonctionne sont codée en dehors du main, en dessous.
+    plateau = interpreteur(FEN2);
+    Refresh_diag(fic,plateau,fen[2],fen[1],note);
 }
-    return 0;//FIN DU PROGRAMME
+    return 0;
 }
 
 
@@ -150,9 +148,9 @@ T_Position interpreteur(const char *FEN2){
     int chx;
     for(j=0;j<NBCASES;j++) //ce for clean le plateau pour n'avoir aucun pion
 	{
-		plateau.cols[j].couleur=0;//motif répété sur NBCASES-1	
+		plateau.cols[j].couleur=0;//motif répété de 0 à NBCASES-1	
         plateau.cols[j].nb=0;
-	}//ici, le plateau est vide.
+    }
 
 
     //INTERPETATION DES CHIFFRES
@@ -160,7 +158,7 @@ T_Position interpreteur(const char *FEN2){
     {
         //Cette double condition vérifie s'il y a deux chiffres d'affilé, si oui on les regroupe
        
-        if((FEN2[k]-48)>=0 && (FEN2[k]-48)<10) //verifie si chiffre: (code ASCII - code ASCII de 0)
+        if((FEN2[k]-48)>=0 && (FEN2[k]-48)<10) //verifie si chiffre:
         {
             if ((FEN2[k]-48)>=0 && (FEN2[k+1]-48)<10) //verifie si nombre à 2 chiffres
                 {
@@ -189,42 +187,42 @@ T_Position interpreteur(const char *FEN2){
                 break;
             case 68://D
                 plateau.cols[i].nb = 2;//2 pions pour la colonne
-                plateau.cols[i].couleur = ROU;//couleur rouge
+                plateau.cols[i].couleur = ROU;
                 break;
             case 81://Q
                 plateau.cols[i].nb = 4;//4 pions pour la colonne
-                plateau.cols[i].couleur = ROU;//couleur rouge
+                plateau.cols[i].couleur = ROU;
                 break;
             case 84://T
                 plateau.cols[i].nb = 3;//3 pions pour la colonne
-                plateau.cols[i].couleur = ROU;//couleur rouge
+                plateau.cols[i].couleur = ROU;
                 break;          
             case 85://U
                 plateau.cols[i].nb = 1;//1 pion pour la colonne
-                plateau.cols[i].couleur = ROU;//couleur rouge
+                plateau.cols[i].couleur = ROU;
                 break;
 
                  //Cas pour les rouges terminés
 
             case 99: //c
                 plateau.cols[i].nb = 5;//5 pions pour la colonne
-                plateau.cols[i].couleur = JAU; //couleur jaune
+                plateau.cols[i].couleur = JAU;
                 break;
             case 100://d
                 plateau.cols[i].nb = 2;//2 pions pour la colonne
-                plateau.cols[i].couleur = JAU; //couleur jaune
+                plateau.cols[i].couleur = JAU;
                 break;
             case 111://q
                 plateau.cols[i].nb = 4;//4 pions pour la colonne
-                plateau.cols[i].couleur = JAU; //couleur jaune
+                plateau.cols[i].couleur = JAU;
                 break;
             case 116://t
                 plateau.cols[i].nb = 3;//3 pions pour la colonne
-                plateau.cols[i].couleur = JAU; //couleur jaune
+                plateau.cols[i].couleur = JAU;
                 break;          
             case 117://u
                 plateau.cols[i].nb = 1;//1 pion pour la colonne
-                plateau.cols[i].couleur = JAU; //couleur jaune
+                plateau.cols[i].couleur = JAU;
                 break;
 
                  //Cas pour les jaunes terminés

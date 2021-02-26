@@ -55,7 +55,7 @@ void standalone(char *fic)
             printf("\nEntrer destination\n");
             scanf("%hhd",&coup.destination);
         }
-        while(!estValide(plateau,coup.origine,coup.destination));
+        while(!estValide(plateau,coup.origine,coup.destination));//On redemmande le coup au joueur si il n'est pas valide 
             plateau = jouerCoup(plateau,coup.origine,coup.destination);
 
         #ifdef __DEBUG__ //Affichage des valeurs pour le mod __Debug__
@@ -75,7 +75,7 @@ void standalone(char *fic)
         score = evaluerScore(plateau);
         afficherScore(score);
     }
-    while(CoupLeg.nb != 0);//On redemmande le coup au joueur si il n'est pas valide ou on détecte la fin de partie
+    while(CoupLeg.nb != 0);//fin de partie si plus de coup légaux
     printf("fin de la partie");
 }
 
