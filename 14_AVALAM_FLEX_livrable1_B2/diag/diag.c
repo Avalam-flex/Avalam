@@ -93,7 +93,7 @@ int main(int argc,char *fen[])
                 else if (fen[2][i]=='r' || fen[2][i]=='j') //si c'est un trait
                     {
                         trait=fen[2][i]; //on stock le trait dans un char à part
-                        i++;//on regarde la prochain caractère 
+                        i++;
                         etat=1; //on repasse au début du 1er filtre
                     }
                 else {etat=2;} //else on check si c'est un nombre
@@ -127,7 +127,7 @@ int main(int argc,char *fen[])
         printf("Nouveau type FEN: <<%s>>\n",FEN2);//affichage de la chaine FEN formatée
     #endif
     plateau = interpreteur(FEN2);
-    Refresh_diag(fic,plateau,fen[2],fen[1],note);
+    //Refresh_diag(fic,plateau,fen[2],fen[1],note);
 }
     return 0;
 }
@@ -160,17 +160,17 @@ T_Position interpreteur(const char *FEN2){
        
         if((FEN2[k]-48)>=0 && (FEN2[k]-48)<10) //verifie si chiffre:
         {
-            if ((FEN2[k]-48)>=0 && (FEN2[k+1]-48)<10) //verifie si nombre à 2 chiffres
+                if ((FEN2[k+1]-48)<10 && (FEN2[k+1]-48)>=0) //verifie si nombre à 2 chiffres
                 {
-                    i = (((FEN2[k]-48)*10) + (FEN2[k+1]-48) + i); //1 chiffre * 10 + 2e chiffre (ex : 12 = 1 *10 + 2)
-                    k = k+2; //On regarde le caractère après le nombre à deux chiffres
+                   i = (((FEN2[k]-48)*10) + (FEN2[k+1]-48) + i); //1 chiffre * 10 + 2e chiffre (ex : 12 = 1 *10 + 2)
+                   k = k+2; //On regarde le caractère après le nombre à deux chiffres
                 }
 
             //Si c'est pas un nombre
             else{
-                k++; //On regarde la prochain caractère a interpreter
                 i = (FEN2[k]-48) + i; //on place les espaces
-            }
+                k++; //On regarde la prochain caractère a interpreter
+                }
         }
         else //donc c'est un char (caractère)
         {
